@@ -2,7 +2,7 @@
 
 *[Título e imagen de portada](#Título-e-imagen-de-portada)
 
-*[Imagen de portada](#Título-e-imagen-de-portada)
+*[Imagen de portada](https://github.com/ricardom12814/conversormonedas/blob/master/Imagen%20de%20fondo.jpg)
 
 *[Índice](#índice)
 
