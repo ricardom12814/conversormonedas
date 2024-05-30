@@ -7,8 +7,6 @@ public class Principal {
         int opcionMonedaLocal = 0;
         double cantidad = 0;
         double resultadoFinal = 0;
-        //String seleccion = "A";
-        //Scanner lectura = new Scanner(System.in);
         CurrencyInfo[] currencies = CurrencyInfo.CurrencyArray();
         ConsultandoArrayMonedas consultandoArrayMonedas = new ConsultandoArrayMonedas();
         ConsultaMoneda consultaMoneda = new ConsultaMoneda();
@@ -29,34 +27,28 @@ public class Principal {
                                 case 1:
                                     String monedaBase = "usd";
                                     String monedaEnConversion = "ars";
-                                    ParametrosConversion parametrosConversion = consultaMoneda.busquedaMoneda(monedaBase.toUpperCase());  //acá estoy pasando los datos a conversor para obtener la tasa de conversion.
-                                    Double tasaDeConversion = parametrosConversion.getConversionRate(monedaEnConversion.toUpperCase());  //la variable tasaDeConversion se carga con el valor entregado por getConversionRate
-                                    //System.out.println(tasaDeConversion);
+                                    ParametrosConversion parametrosConversion = consultaMoneda.busquedaMoneda(monedaBase.toUpperCase());
+                                    Double tasaDeConversion = parametrosConversion.getConversionRate(monedaEnConversion.toUpperCase());
                                     cantidad = menu.mostrarMenuLeerCantidad();
                                     resultadoFinal = calculos.calculoConversion(tasaDeConversion, cantidad);
-                                    //System.out.println(resultadoFinal);
                                     menu.mostrarResultadoFinal(monedaBase, monedaEnConversion, resultadoFinal, cantidad);
                                     break;
                                 case 2:
                                     monedaBase = "usd";
                                     monedaEnConversion = "brl";
-                                    parametrosConversion = consultaMoneda.busquedaMoneda(monedaBase.toUpperCase());  //acá estoy pasando los datos a conversor para obtener la tasa de conversion.
-                                    tasaDeConversion = parametrosConversion.getConversionRate(monedaEnConversion.toUpperCase());  //la variable tasaDeConversion se carga con el valor entregado por getConversionRate
-                                    //System.out.println(tasaDeConversion);
+                                    parametrosConversion = consultaMoneda.busquedaMoneda(monedaBase.toUpperCase());
+                                    tasaDeConversion = parametrosConversion.getConversionRate(monedaEnConversion.toUpperCase());
                                     cantidad = menu.mostrarMenuLeerCantidad();
                                     resultadoFinal = calculos.calculoConversion(tasaDeConversion, cantidad);
-                                    //System.out.println(resultadoFinal);
                                     menu.mostrarResultadoFinal(monedaBase, monedaEnConversion, resultadoFinal, cantidad);
                                     break;
                                 case 3:
                                     monedaBase = "usd";
                                     monedaEnConversion = "cop";
-                                    parametrosConversion = consultaMoneda.busquedaMoneda(monedaBase.toUpperCase());  //acá estoy pasando los datos a conversor para obtener la tasa de conversion.
-                                    tasaDeConversion = parametrosConversion.getConversionRate(monedaEnConversion.toUpperCase());  //la variable tasaDeConversion se carga con el valor entregado por getConversionRate
-                                    //System.out.println(tasaDeConversion);
+                                    parametrosConversion = consultaMoneda.busquedaMoneda(monedaBase.toUpperCase());
+                                    tasaDeConversion = parametrosConversion.getConversionRate(monedaEnConversion.toUpperCase());
                                     cantidad = menu.mostrarMenuLeerCantidad();
                                     resultadoFinal = calculos.calculoConversion(tasaDeConversion, cantidad);
-                                    //System.out.println(resultadoFinal);
                                     menu.mostrarResultadoFinal(monedaBase, monedaEnConversion, resultadoFinal, cantidad);
                                     break;
                                 case 4:
@@ -67,7 +59,6 @@ public class Principal {
                                     break;
                                 case 6:
                                     seleccion = menu.mostrarMenuMonedaAdicional();
-                                    //System.out.println(seleccion);
                                     String country = seleccion;
                                     String currencyCode = ConsultandoArrayMonedas.findCurrencyCodeByCountry(currencies, country);
                                     if (currencyCode != null) {
@@ -88,7 +79,65 @@ public class Principal {
                                 default:
                                     System.out.println("Opción no válida: opcionMonedaLocal");
                             }
+                        case 2:
+                            opcionMonedaLocal = menu.mostrarMenuDolaresAMonedaLocal();
+                            switch (opcionMonedaLocal) {
+                                case 1:
+                                    String monedaEnConversion = "usd";
+                                    String monedaBase  = "ars";
+                                    ParametrosConversion parametrosConversion = consultaMoneda.busquedaMoneda(monedaBase.toUpperCase());
+                                    Double tasaDeConversion = parametrosConversion.getConversionRate(monedaEnConversion.toUpperCase());
+                                    cantidad = menu.mostrarMenuLeerCantidad();
+                                    resultadoFinal = calculos.calculoConversion(tasaDeConversion, cantidad);
+                                    menu.mostrarResultadoFinal(monedaBase, monedaEnConversion, resultadoFinal, cantidad);
+                                    break;
+                                case 2:
+                                    monedaEnConversion = "usd";
+                                    monedaBase = "brl";
+                                    parametrosConversion = consultaMoneda.busquedaMoneda(monedaBase.toUpperCase());
+                                    tasaDeConversion = parametrosConversion.getConversionRate(monedaEnConversion.toUpperCase());
+                                    cantidad = menu.mostrarMenuLeerCantidad();
+                                    resultadoFinal = calculos.calculoConversion(tasaDeConversion, cantidad);
+                                    menu.mostrarResultadoFinal(monedaBase, monedaEnConversion, resultadoFinal, cantidad);
+                                    break;
+                                case 3:
+                                    monedaEnConversion  = "usd";
+                                    monedaBase = "cop";
+                                    parametrosConversion = consultaMoneda.busquedaMoneda(monedaBase.toUpperCase());
+                                    tasaDeConversion = parametrosConversion.getConversionRate(monedaEnConversion.toUpperCase());
+                                    cantidad = menu.mostrarMenuLeerCantidad();
+                                    resultadoFinal = calculos.calculoConversion(tasaDeConversion, cantidad);
+                                    menu.mostrarResultadoFinal(monedaBase, monedaEnConversion, resultadoFinal, cantidad);
+                                    break;
+                                case 4:
+                                    System.out.println("Opción no habilitada");
+                                    break;
+                                case 5:
+                                    System.out.println("Opción no habilitada");
+                                    break;
+                                case 6:
+                                    seleccion = menu.mostrarMenuMonedaAdicional();
+                                    String country = seleccion;
+                                    String currencyCode = ConsultandoArrayMonedas.findCurrencyCodeByCountry(currencies, country);
+                                    if (currencyCode != null) {
+                                        boolean allowedToConvert = true;
+                                        monedaBase = currencyCode;
+                                        monedaEnConversion  = "usd";
+                                        parametrosConversion = consultaMoneda.busquedaMoneda(monedaBase.toUpperCase());
+                                        tasaDeConversion = parametrosConversion.getConversionRate(monedaEnConversion.toUpperCase());
+                                        cantidad = menu.mostrarMenuLeerCantidad();
+                                        resultadoFinal = calculos.calculoConversion(tasaDeConversion, cantidad);
+                                        menu.mostrarResultadoFinal(monedaBase, monedaEnConversion, resultadoFinal, cantidad);
 
+                                    } else {
+                                        boolean allowedToConvert = false;
+                                        menu.mostrarMenuNull();
+                                        break;
+                                    }
+                                    break;
+                                default:
+                                    System.out.println("Opción no válida: opcionMonedaLocal");
+                            }
                         default:
                             System.out.println("Opción no válida: opcionConversion ");
                     }

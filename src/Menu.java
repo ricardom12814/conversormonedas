@@ -126,9 +126,59 @@ public class Menu {
                 ****************************************
                 """;
         System.out.println(mostrarMenuMonedaLocalADolares());
-        Scanner opcion = new Scanner(System.in);
-        return opcion.nextInt();
+        Scanner opcionMonedaLocalADolares = new Scanner(System.in);
+        String seleccion = opcionMonedaLocalADolares.nextLine().trim().toLowerCase();
+
+        int seleccionMonedaLocalADolar = 0;
+
+        if (seleccion.contains("argentina")){
+            return seleccionMonedaLocalADolar = 1;}
+        else if (seleccion.contains("ars")){
+            return seleccionMonedaLocalADolar = 1;}
+        else if (seleccion.contains("1")){
+            return seleccionMonedaLocalADolar = 1;}
+
+        if (seleccion.contains("brasil")){
+            return seleccionMonedaLocalADolar = 2;}
+        else if (seleccion.contains("brl")){
+            return seleccionMonedaLocalADolar = 2;}
+        else if (seleccion.contains("2")){
+            return seleccionMonedaLocalADolar = 2;}
+
+        if (seleccion.contains("colombia")){
+            return seleccionMonedaLocalADolar = 3;}
+        else if (seleccion.contains("cop")){
+            return seleccionMonedaLocalADolar = 3;}
+        else if (seleccion.contains("3")){
+            return seleccionMonedaLocalADolar = 3;}
+
+        if (seleccion.contains("europa")){
+            return seleccionMonedaLocalADolar = 4;}
+        else if (seleccion.contains("eur")){
+            return seleccionMonedaLocalADolar = 4;}
+        else if (seleccion.contains("4")){
+            return seleccionMonedaLocalADolar = 4;}
+
+        if (seleccion.contains("mexico")){
+            return seleccionMonedaLocalADolar = 5;}
+        else if (seleccion.contains("mxn")){
+            return seleccionMonedaLocalADolar = 5;}
+        else if (seleccion.contains("5")){
+            return seleccionMonedaLocalADolar = 5;}
+
+        if (seleccion.contains("otra")){
+            return seleccionMonedaLocalADolar = 6;}
+        else if (seleccion.contains("6")){
+            return seleccionMonedaLocalADolar = 6;}
+
+        if (seleccion.contains("atras")){
+            return seleccionMonedaLocalADolar = 7;}
+        else if (seleccion.contains("7")){
+            return seleccionMonedaLocalADolar = 7;}
+
+        return seleccionMonedaLocalADolar;
     }
+
 
     public double mostrarMenuLeerCantidad () {
         String menuLeerCantidad = """
@@ -144,10 +194,10 @@ public class Menu {
     }
 
     public void mostrarResultadoFinal (String monedaBase, String monedaEnConversion, Double resultadoFinal, Double cantidad){
-        //String menuResultadoFinal = """
         System.out.println("****************************************\n");
         System.out.println("Resultados de la conversion:\n");
-        System.out.println("$ "+cantidad+" "+monedaBase.toUpperCase()+" "+"equivale a: "+"$ "+resultadoFinal+" "+monedaEnConversion.toUpperCase()+"\n");
+        //System.out.println(String.format("$ " + cantidad + " " + monedaBase.toUpperCase() + " " + "equivalen a: " + "$ " + resultadoFinal +" "+monedaEnConversion.toUpperCase()+"\n");
+        System.out.println(String.format("$ %.2f %s equivalen a: %.2f %s%n", cantidad, monedaBase.toUpperCase(), resultadoFinal, monedaEnConversion.toUpperCase()));
         System.out.println("9. Salir.\n");
         System.out.println("****************************************\n");
     }
