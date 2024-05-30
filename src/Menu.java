@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Menu {
-    public int mostrarMenuConversion(){
+    public int  mostrarMenuConversion(){
         String menuConversion = """
             ****************************************
             Sea bienvenido/a al Conversor de Moneda:
@@ -33,8 +33,8 @@ public class Menu {
             ****************************************
             """;
         System.out.println(menuInicial);
-        Scanner opcion = new Scanner(System.in);
-        return opcion.nextInt();
+        Scanner opcionInicial = new Scanner(System.in);
+        return opcionInicial.nextInt();
     }
 
     public int mostrarMenuDolaresAMonedaLocal (){
